@@ -1,0 +1,25 @@
+<div [ngClass]="{
+  'list-group-item':true
+
+  }">
+
+  <div class="d-flex w-100 justify-content-between">
+    <p>{{post._id}}</p>
+    <strong class="mb-1">{{ post.title }}</strong>
+    <small>{{ post.CreatedAt | date: 'short' }}</small>
+  </div>
+  <p class="mb-1">
+    {{ post.content }}
+  </p>
+
+  <div class="d-flex w-100 justify-content-between">
+    <div>
+      <button type="button" class="btn btn-success m-1" (click)="onLikeClick()" >Love it ! :)</button>
+      <button type="button" class="btn btn-danger m-1">Don't love it.. :(</button>
+      <span class="badge badge-secondary m-1">
+        {{ post.lovesIts }}
+      </span>
+    </div>
+    <button type="button" class="btn btn-danger" (click)="onDelete(post._id)">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<h1 class="h1 m-3">Posts</h1>
+<ul class="list-group">
+  <app-post-list-item
+    *ngFor="let post of posts   ; let i = index;"
+    [post]="post"
+    [index]="i"
+    (notify)="onDelete(post._id)"
+  >
+
+  </app-post-list-item>
+</ul>

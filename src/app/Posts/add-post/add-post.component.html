@@ -1,0 +1,10 @@
+<form #formulaire = "ngForm">
+  Title : <input #title="ngModel" type="text" required type="text" class="form-control" ngModel name="title">
+  <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+    Veuillez saisir un email valid
+  </div>
+  Content : <input type="text" required  class="form-control" ngModel name="content">
+</form>
+<button [disabled]="formulaire.invalid" (click)="onSubmit(formulaire)" class="btn btn-primary">
+  add
+</button>
